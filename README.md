@@ -1,9 +1,13 @@
 Role Name : Intellipaat
+
 Intellipaat devops assignment automation with ansible.
 
 Jenkins info:
+
 default Username: admin
+
 default Password: admin
+
 default Port: 8080
 
 Requirements

@@ -1,0 +1,36 @@
+---
+language: python
+services: docker
+sudo: required
+
+env:
+  global:
+    - ROLE_NAME: intellipaat
+  matrix:
+    - MOLECULE_DISTRO: centos7
+
+install:
+  - pip install molecule yamllint ansible-lint docker
+
+before_script:
+  - cd ../
+  - mv ansible-role-$ROLE_NAME hemanth22.$ROLE_NAME
+  - cd hemanth22.$ROLE_NAME
+
+script:
+  - molecule test
+
+after_failure:
+  - wget -O createIssue.sh https://git.io/CreateIssue
+  - chmod 777 createIssue.sh
+  - ./createIssue.sh
+
+notifications:
+  slack:
+    if: branch = develop
+    rooms:
+      - nothingorganization:GN1JzklSpbMyfZVWcS05U6a0#mygitrepos
+  webhooks:
+    if: branch != develop
+    urls:
+      - https://galaxy.ansible.com/api/v1/notifications/

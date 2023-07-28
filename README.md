@@ -1,6 +1,6 @@
 # Ansible12345
 
-ole Name : intellipaat
+Role Name : intellipaat
 Intellipaat devops assignment automation with ansible.
 
 Build Status

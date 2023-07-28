@@ -1,1 +1,14 @@
-main.yaml
+---
+# defaults file for jenkins
+keypair: bitroid
+instance_type: t2.micro
+security_group: sg-090c080efee992a15
+image: ami-01ed306a12b7d1c96
+vpc_subnet_zone1_id: subnet-040259e5034858090
+vpc_subnet_zone2_id: subnet-0f4762e434e6b3542
+vpc_subnet_zone3_id: subnet-03b90f5f268b3c543
+vpc_subnet_zone4_id: subnet-0d71077fc03f264cb
+volume_size: 10
+region: us-west-2
+ec2_access_key: ABCDF
+ec2_secret_key: EFGH
